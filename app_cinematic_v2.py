@@ -53,6 +53,18 @@ st.markdown(
     color: #f5f5f5;
 }
 
+/* Fix Streamlit idea input visibility */
+[data-testid="stTextArea"] textarea {
+    color: #111111 !important;
+    background-color: #ffffff !important;
+    caret-color: #111111 !important;
+}
+
+[data-testid="stTextArea"] textarea::placeholder {
+    color: #666666 !important;
+    opacity: 1 !important;
+}
+
 .block-container {
     padding-top: 2rem;
     padding-bottom: 3rem;
