@@ -47,10 +47,32 @@ st.markdown(
 
 .stApp {
     background:
-        radial-gradient(circle at 20% 10%, rgba(80,80,80,0.18), transparent 35%),
-        radial-gradient(circle at 80% 20%, rgba(120,120,120,0.10), transparent 35%),
-        linear-gradient(135deg, #050505 0%, #111111 45%, #020202 100%);
+        radial-gradient(circle at 78% 18%, rgba(180, 25, 25, 0.16), transparent 28%),
+        radial-gradient(circle at 18% 78%, rgba(255, 180, 70, 0.09), transparent 30%),
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.055), transparent 24%),
+        repeating-linear-gradient(105deg, transparent 0px, transparent 90px, rgba(255,255,255,0.012) 91px, transparent 93px),
+        linear-gradient(135deg, #020203 0%, #09090b 42%, #13090a 72%, #010101 100%);
     color: #f5f5f5;
+}
+
+/* Cinematic pipeline tabs */
+.stTabs [data-baseweb="tab"] {
+    color: #f2f2f2 !important;
+    opacity: 1 !important;
+    font-weight: 600 !important;
+}
+.stTabs [data-baseweb="tab"] p {
+    color: #f2f2f2 !important;
+}
+.stTabs [data-baseweb="tab"]:hover p {
+    color: #ff4b4b !important;
+}
+.stTabs [aria-selected="true"] p {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+.stTabs [aria-selected="true"] {
+    color: #ffffff !important;
 }
 
 /* Fix Streamlit idea input visibility */
