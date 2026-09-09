@@ -40,7 +40,7 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC CSS (FIXED LABELS, TABS, FONT CLARITY & ZERO FADE)
+# CINEMATIC CSS (FIXED LABELS, TABS, BUTTONS & ZERO FADE)
 # ============================================================
 
 st.markdown(
@@ -225,22 +225,37 @@ div.stElementContainer {
     font-size: 1.15rem;
 }
 
-/* Primary Action Buttons */
-.stButton > button {
-    width: 100%;
-    min-height: 48px;
-    border-radius: 10px;
-    font-size: 1.05rem;
-    font-weight: 700;
-    border: 1px solid rgba(255, 59, 48, 0.4);
-    background: linear-gradient(135deg, #FF3B30 0%, #C02018 100%);
+/* ============================================================ */
+/* ACTION BUTTONS & DOWNLOAD BUTTON FIX                         */
+/* ============================================================ */
+.stButton > button,
+[data-testid="stDownloadButton"] > button {
+    width: 100% !important;
+    min-height: 48px !important;
+    border-radius: 10px !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    border: 1px solid rgba(255, 59, 48, 0.4) !important;
+    background: linear-gradient(135deg, #FF3B30 0%, #C02018 100%) !important;
+    background-color: #FF3B30 !important;
     color: #FFFFFF !important;
-    transition: 0.2s ease;
+    -webkit-text-fill-color: #FFFFFF !important;
+    transition: 0.2s ease !important;
+    opacity: 1 !important;
 }
 
-.stButton > button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 59, 48, 0.4);
+[data-testid="stDownloadButton"] > button * {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+.stButton > button:hover,
+[data-testid="stDownloadButton"] > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 59, 48, 0.5) !important;
+    background: linear-gradient(135deg, #FF4D40 0%, #D0251C 100%) !important;
 }
 
 /* High-Contrast Crystal Clear Output Styling */
