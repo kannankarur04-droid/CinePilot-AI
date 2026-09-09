@@ -47,11 +47,11 @@ st.markdown(
 
 .stApp {
     background:
-        radial-gradient(circle at 78% 18%, rgba(180, 25, 25, 0.16), transparent 28%),
-        radial-gradient(circle at 18% 78%, rgba(255, 180, 70, 0.09), transparent 30%),
-        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.055), transparent 24%),
-        repeating-linear-gradient(105deg, transparent 0px, transparent 90px, rgba(255,255,255,0.012) 91px, transparent 93px),
-        linear-gradient(135deg, #020203 0%, #09090b 42%, #13090a 72%, #010101 100%);
+        radial-gradient(circle at 82% 16%, rgba(220, 30, 30, 0.20), transparent 25%),
+        radial-gradient(circle at 12% 78%, rgba(255, 170, 55, 0.10), transparent 28%),
+        radial-gradient(circle at 50% -10%, rgba(255,255,255,0.07), transparent 22%),
+        repeating-linear-gradient(90deg, transparent 0px, transparent 118px, rgba(255,255,255,0.018) 119px, transparent 121px),
+        linear-gradient(145deg, #010102 0%, #08090c 38%, #100708 68%, #020203 100%);
     color: #f5f5f5;
 }
 
