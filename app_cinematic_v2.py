@@ -180,6 +180,16 @@ textarea {
 .stTabs [data-baseweb="tab"] {
     border-radius: 10px;
     padding: 10px 14px;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.stTabs [data-baseweb="tab"] p,
+.stTabs [data-baseweb="tab"] span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 
 /* Output */
