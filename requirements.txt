@@ -1,0 +1,5 @@
+streamlit
+google-genai
+parallel-web
+python-dotenv
+pydantic
