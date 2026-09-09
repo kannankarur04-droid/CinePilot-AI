@@ -704,3 +704,33 @@ st.html(
 </div>
 """
 )
+# ============================================================
+# FORCE TAB TEXT & ICON COLOR VIA DOM INJECTION
+# ============================================================
+import streamlit.components.v1 as components
+
+components.html(
+    """
+    <script>
+    function forceWhiteTabs() {
+        const doc = window.parent.document;
+        const tabs = doc.querySelectorAll('button[data-baseweb="tab"]');
+        tabs.forEach(tab => {
+            tab.style.setProperty('opacity', '1', 'important');
+            tab.style.setProperty('filter', 'none', 'important');
+            const allElements = tab.querySelectorAll('*');
+            allElements.forEach(el => {
+                el.style.setProperty('color', '#FFFFFF', 'important');
+                el.style.setProperty('opacity', '1', 'important');
+                el.style.setProperty('filter', 'none', 'important');
+            });
+        });
+    }
+    // Run immediately and periodically to catch re-renders
+    forceWhiteTabs();
+    setInterval(forceWhiteTabs, 800);
+    </script>
+    """,
+    height=0,
+    width=0
+)
