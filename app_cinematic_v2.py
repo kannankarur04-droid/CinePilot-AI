@@ -38,15 +38,21 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC DARK CSS (HIGH VISIBILITY & CONTRAST)
+# CINEMATIC DARK CSS (WITH CAMERA LENS WATERMARK)
 # ============================================================
 
 st.markdown(
     """
 <style>
-/* 1. Deep Cinema Obsidian Canvas with Vignette */
+/* 1. Deep Cinema Obsidian Canvas with Subtle Camera Lens Watermark */
 .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
-    background: radial-gradient(circle at 50% 15%, #141820 0%, #08090c 75%, #020203 100%) !important;
+    background-color: #06080b !important;
+    background-image: 
+        radial-gradient(circle at 50% 12%, rgba(20, 26, 36, 0.85) 0%, #06080b 80%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.022)' stroke-width='0.6'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/%3E%3Ccircle cx='12' cy='13' r='4'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center 38% !important;
+    background-size: 580px 580px !important;
     background-attachment: fixed !important;
     color: #f0f6fc !important;
 }
@@ -78,7 +84,7 @@ strong, b, [data-testid="stMarkdownContainer"] strong {
     font-weight: 700 !important;
 }
 
-/* 5. Fix st.text & pre Blocks (No More Faded / Invisible Text) */
+/* 5. Fix Output Boxes (Sharp, Readable Markdown) */
 pre, .stText, [data-testid="stText"] {
     background-color: #0b0e14 !important;
     color: #f0f6fc !important;
@@ -95,10 +101,10 @@ pre, .stText, [data-testid="stText"] {
 /* 6. High-Contrast Studio Text Input */
 [data-testid="stTextArea"] textarea {
     color: #ffffff !important;
-    background-color: #0f131a !important;
+    background-color: #0e1219 !important;
     caret-color: #ff4b4b !important;
     -webkit-text-fill-color: #ffffff !important;
-    border: 1px solid #ff4b4b !important;
+    border: 1.5px solid #ff4b4b !important;
     border-radius: 12px !important;
     font-size: 1.05rem !important;
 }
@@ -108,24 +114,31 @@ pre, .stText, [data-testid="stText"] {
     opacity: 1 !important;
 }
 
-/* 7. Film Studio Cards */
+/* 7. Film Studio Compact Hero Card */
 .hero {
     text-align: center;
-    padding: 35px 20px;
-    margin-bottom: 25px;
-    border-radius: 20px;
-    background: rgba(22, 27, 34, 0.75);
-    border: 1px solid rgba(255, 75, 75, 0.35);
-    box-shadow: 0 15px 45px rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
+    padding: 12px 16px !important;
+    margin-bottom: 12px !important;
+    border-radius: 14px !important;
+    background: rgba(18, 23, 31, 0.85) !important;
+    border: 1px solid rgba(255, 75, 75, 0.35) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.hero h1 {
+    font-size: 2.1rem !important;
+    margin-bottom: 2px !important;
+    margin-top: 0 !important;
+    letter-spacing: 1px !important;
 }
 
 .idea-card {
-    padding: 24px;
-    border-radius: 16px;
-    background: rgba(22, 27, 34, 0.65);
+    padding: 18px 22px;
+    border-radius: 14px;
+    background: rgba(18, 23, 31, 0.7);
     border: 1px solid #30363d;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .output-box {
@@ -158,7 +171,7 @@ pre, .stText, [data-testid="stText"] {
 /* 9. Production Tabs */
 .stTabs [data-baseweb="tab-list"] {
     gap: 8px;
-    background: rgba(15, 19, 26, 0.85);
+    background: rgba(14, 18, 25, 0.85);
     padding: 10px;
     border-radius: 12px;
     border: 1px solid #21262d;
@@ -191,8 +204,8 @@ pre, .stText, [data-testid="stText"] {
 .footer {
     text-align: center;
     color: #6e7681;
-    padding-top: 35px;
-    font-size: 0.95rem;
+    padding-top: 30px;
+    font-size: 0.92rem;
 }
 </style>
 """,
@@ -200,20 +213,20 @@ pre, .stText, [data-testid="stText"] {
 )
 
 # ============================================================
-# HERO
+# COMPACT HERO
 # ============================================================
 
 st.html(
     """
 <div class="hero">
     <h1>🎬 CINEPILOT AI</h1>
-    <p style="font-size: 1.35rem; font-weight: 600; color: #ffffff; margin: 8px 0;">
+    <p style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 2px 0;">
         From One Idea to a Production-Ready Film
     </p>
-    <p style="color: #ffca85; font-size: 1.1rem; margin: 6px 0;">
+    <p style="color: #ffca85; font-size: 0.92rem; margin: 2px 0;">
         🤖 Autonomous AI Film Production Factory
     </p>
-    <p style="font-size: 0.98rem; color: #8b949e; margin-top: 8px;">
+    <p style="font-size: 0.82rem; color: #8b949e; margin-top: 4px; margin-bottom: 0;">
         Research • Story • Shots • Production • Cinematic Visuals
     </p>
 </div>
@@ -278,7 +291,6 @@ def show_output(result, key, title):
 
     if value.strip():
         st.markdown('<div class="output-box">', unsafe_allow_html=True)
-        # Markdown parsing preserves formatting and ensures sharp white visibility
         st.markdown(value)
         st.markdown('</div>', unsafe_allow_html=True)
     else:
@@ -286,7 +298,7 @@ def show_output(result, key, title):
 
 
 # ============================================================
-# FILM IDEA INPUT
+# FILM IDEA INPUT (EXPANDED HEIGHT)
 # ============================================================
 
 st.html(
@@ -301,10 +313,11 @@ st.html(
 """
 )
 
+# Box length/height extended to 220px for clear typing view
 film_idea = st.text_area(
     "Enter any film idea",
     value="",
-    height=130,
+    height=220,
     placeholder=(
         "Example: A fisherman in a coastal Tamil Nadu village "
         "discovers an abandoned lighthouse that contains a secret "
