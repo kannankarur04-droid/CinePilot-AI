@@ -39,7 +39,7 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC CSS (FIXED ICONS, TABS & VISIBILITY)
+# CINEMATIC CSS (FIXED TAB BUTTONS, ICONS & FONT CLARITY)
 # ============================================================
 
 st.markdown(
@@ -109,25 +109,29 @@ st.markdown(
     opacity: 1 !important;
 }
 
-/* High-Clarity Pipeline Tabs & Icons (Zero Fade, 100% Vibrant) */
+/* High-Clarity Pipeline Tabs (Always 100% Bright White, Never Faded) */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 10px !important;
+    gap: 8px !important;
     background: rgba(255, 255, 255, 0.08) !important;
-    padding: 10px 12px !important;
-    border-radius: 14px !important;
+    padding: 8px 10px !important;
+    border-radius: 12px !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
-.stTabs [data-baseweb="tab"] {
+/* Base Tab Button Styling */
+.stTabs button[role="tab"] {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
     border-radius: 8px !important;
     padding: 8px 14px !important;
-    background: rgba(255, 255, 255, 0.06) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     opacity: 1 !important;
 }
 
-/* Ensure tab text, icons, and emojis never fade */
-.stTabs [data-baseweb="tab"] * {
+/* Force Tab text, icons, and nested elements to pure bright white */
+.stTabs button[role="tab"] div,
+.stTabs button[role="tab"] p,
+.stTabs button[role="tab"] span,
+.stTabs button[role="tab"] * {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     opacity: 1 !important;
@@ -136,23 +140,25 @@ st.markdown(
     font-size: 0.95rem !important;
 }
 
-.stTabs [data-baseweb="tab"]:hover {
+/* Tab Hover State */
+.stTabs button[role="tab"]:hover {
     background: rgba(255, 59, 48, 0.25) !important;
-    border: 1px solid #FF3B30 !important;
+    border-color: #FF3B30 !important;
 }
 
-.stTabs [data-baseweb="tab"]:hover * {
+.stTabs button[role="tab"]:hover * {
     color: #FF6B6B !important;
     -webkit-text-fill-color: #FF6B6B !important;
 }
 
-.stTabs [aria-selected="true"] {
+/* Selected Tab (Active State) */
+.stTabs button[role="tab"][aria-selected="true"] {
     background: rgba(255, 59, 48, 0.35) !important;
     border: 1px solid #FF3B30 !important;
-    box-shadow: 0 0 12px rgba(255, 59, 48, 0.4) !important;
+    box-shadow: 0 0 10px rgba(255, 59, 48, 0.45) !important;
 }
 
-.stTabs [aria-selected="true"] * {
+.stTabs button[role="tab"][aria-selected="true"] * {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     font-weight: 800 !important;
