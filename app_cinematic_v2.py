@@ -38,185 +38,162 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC CSS
+# CINEMATIC DARK CSS (HIGH VISIBILITY & CONTRAST)
 # ============================================================
 
 st.markdown(
     """
 <style>
-
-.stApp {
-    background:
-        radial-gradient(circle at 82% 16%, rgba(220, 30, 30, 0.20), transparent 25%),
-        radial-gradient(circle at 12% 78%, rgba(255, 170, 55, 0.10), transparent 28%),
-        radial-gradient(circle at 50% -10%, rgba(255,255,255,0.07), transparent 22%),
-        repeating-linear-gradient(90deg, transparent 0px, transparent 118px, rgba(255,255,255,0.018) 119px, transparent 121px),
-        linear-gradient(145deg, #010102 0%, #08090c 38%, #100708 68%, #020203 100%);
-    color: #f5f5f5;
+/* 1. Deep Cinema Obsidian Canvas with Vignette */
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+    background: radial-gradient(circle at 50% 15%, #141820 0%, #08090c 75%, #020203 100%) !important;
+    background-attachment: fixed !important;
+    color: #f0f6fc !important;
 }
 
-/* Cinematic pipeline tabs */
-.stTabs [data-baseweb="tab"] {
-    color: #f2f2f2 !important;
+/* 2. Absolute Crisp Visibility for Standard Text, Markdown, and Output Boxes */
+.stApp p, .stApp span, .stApp label, .stApp li, .stApp div,
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li,
+[data-testid="stMarkdownContainer"] span {
+    color: #f0f6fc !important;
     opacity: 1 !important;
-    font-weight: 600 !important;
+    font-size: 1.02rem;
+    line-height: 1.6;
 }
-.stTabs [data-baseweb="tab"] p {
-    color: #f2f2f2 !important;
-}
-.stTabs [data-baseweb="tab"]:hover p {
-    color: #ff4b4b !important;
-}
-.stTabs [aria-selected="true"] p {
+
+/* 3. Screenplay Titles & Headings */
+h1, h2, h3, h4, h5, h6,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3 {
     color: #ffffff !important;
     font-weight: 700 !important;
-}
-.stTabs [aria-selected="true"] {
-    color: #ffffff !important;
+    letter-spacing: 0.5px;
 }
 
-/* Fix Streamlit idea input visibility */
+/* 4. Bold Accents in Warm Screenplay Gold */
+strong, b, [data-testid="stMarkdownContainer"] strong {
+    color: #ffca85 !important;
+    font-weight: 700 !important;
+}
+
+/* 5. Fix st.text & pre Blocks (No More Faded / Invisible Text) */
+pre, .stText, [data-testid="stText"] {
+    background-color: #0b0e14 !important;
+    color: #f0f6fc !important;
+    -webkit-text-fill-color: #f0f6fc !important;
+    border: 1px solid #30363d !important;
+    border-radius: 8px !important;
+    padding: 16px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+}
+
+/* 6. High-Contrast Studio Text Input */
 [data-testid="stTextArea"] textarea {
-    color: #111111 !important;
-    background-color: #ffffff !important;
-    caret-color: #111111 !important;
+    color: #ffffff !important;
+    background-color: #0f131a !important;
+    caret-color: #ff4b4b !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid #ff4b4b !important;
+    border-radius: 12px !important;
+    font-size: 1.05rem !important;
 }
 
 [data-testid="stTextArea"] textarea::placeholder {
-    color: #666666 !important;
+    color: #8b949e !important;
     opacity: 1 !important;
 }
 
-.block-container {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    max-width: 1500px;
-}
-
-/* Hero */
+/* 7. Film Studio Cards */
 .hero {
     text-align: center;
-    padding: 30px 20px 25px 20px;
+    padding: 35px 20px;
     margin-bottom: 25px;
-    border-radius: 22px;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.08),
-            rgba(255,255,255,0.02)
-        );
-    border: 1px solid rgba(255,255,255,0.12);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    border-radius: 20px;
+    background: rgba(22, 27, 34, 0.75);
+    border: 1px solid rgba(255, 75, 75, 0.35);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
 }
 
-.hero h1 {
-    font-size: 3.2rem;
-    margin-bottom: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.hero p {
-    margin: 7px 0;
-    color: #d0d0d0;
-    font-size: 1.15rem;
-}
-
-.hero .tagline {
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: #ffffff;
-}
-
-.hero .pipeline {
-    font-size: 0.98rem;
-    color: #aaaaaa;
-}
-
-/* Idea card */
 .idea-card {
-    padding: 25px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.045);
-    border: 1px solid rgba(255,255,255,0.10);
+    padding: 24px;
+    border-radius: 16px;
+    background: rgba(22, 27, 34, 0.65);
+    border: 1px solid #30363d;
     margin-bottom: 20px;
 }
 
-/* Buttons */
+.output-box {
+    padding: 20px;
+    border-radius: 14px;
+    background: #090c10;
+    border: 1px solid #21262d;
+    margin-top: 15px;
+}
+
+/* 8. Studio Primary Button */
 .stButton > button {
     width: 100%;
     min-height: 52px;
     border-radius: 12px;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    border: 1px solid rgba(255,255,255,0.18);
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #d8d8d8
-    );
-    color: #050505;
-    transition: 0.2s ease;
+    border: 1px solid #ff4b4b;
+    background: linear-gradient(135deg, #ff4b4b 0%, #b91c1c 100%);
+    color: #ffffff !important;
+    transition: 0.25s ease;
+    box-shadow: 0 4px 20px rgba(255, 75, 75, 0.3);
 }
 
 .stButton > button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+    box-shadow: 0 8px 25px rgba(255, 75, 75, 0.5);
 }
 
-/* Text area */
-textarea {
-    border-radius: 12px !important;
-}
-
-/* Tabs */
+/* 9. Production Tabs */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 5px;
-    background: rgba(255,255,255,0.025);
-    padding: 8px;
-    border-radius: 14px;
+    gap: 8px;
+    background: rgba(15, 19, 26, 0.85);
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #21262d;
 }
 
 .stTabs [data-baseweb="tab"] {
-    border-radius: 10px;
-    padding: 10px 14px;
-    color: #ffffff !important;
-    opacity: 1 !important;
-    -webkit-text-fill-color: #ffffff !important;
+    color: #8b949e !important;
+    font-weight: 600 !important;
+    padding: 10px 16px;
+    border-radius: 8px;
 }
 
-.stTabs [data-baseweb="tab"] p,
-.stTabs [data-baseweb="tab"] span {
-    color: #ffffff !important;
-    opacity: 1 !important;
-    -webkit-text-fill-color: #ffffff !important;
+.stTabs [aria-selected="true"] {
+    background-color: rgba(255, 75, 75, 0.15) !important;
+    border-bottom: 2px solid #ff4b4b !important;
 }
 
-/* Output */
-.output-box {
-    padding: 22px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.035);
-    border: 1px solid rgba(255,255,255,0.09);
-    margin-top: 15px;
+.stTabs [aria-selected="true"] p,
+.stTabs [aria-selected="true"] span {
+    color: #ff4b4b !important;
+    font-weight: 700 !important;
 }
 
-/* Status cards */
-.status-card {
-    padding: 18px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
+/* 10. Metric Cards */
+[data-testid="stMetricValue"] {
+    color: #ffca85 !important;
+    font-weight: 800 !important;
 }
 
 .footer {
     text-align: center;
-    color: #777777;
-    padding-top: 30px;
-    font-size: 0.9rem;
+    color: #6e7681;
+    padding-top: 35px;
+    font-size: 0.95rem;
 }
-
 </style>
 """,
     unsafe_allow_html=True
@@ -229,21 +206,16 @@ textarea {
 st.html(
     """
 <div class="hero">
-
     <h1>🎬 CINEPILOT AI</h1>
-
-    <p class="tagline">
+    <p style="font-size: 1.35rem; font-weight: 600; color: #ffffff; margin: 8px 0;">
         From One Idea to a Production-Ready Film
     </p>
-
-    <p>
+    <p style="color: #ffca85; font-size: 1.1rem; margin: 6px 0;">
         🤖 Autonomous AI Film Production Factory
     </p>
-
-    <p class="pipeline">
+    <p style="font-size: 0.98rem; color: #8b949e; margin-top: 8px;">
         Research • Story • Shots • Production • Cinematic Visuals
     </p>
-
 </div>
 """
 )
@@ -300,31 +272,17 @@ def get_value(result, key):
 
 
 def show_output(result, key, title):
-    """Display generated stage output."""
-
+    """Display generated stage output clearly."""
     st.subheader(title)
-
     value = get_value(result, key)
 
     if value.strip():
-
-        st.markdown(
-            '<div class="output-box">',
-            unsafe_allow_html=True
-        )
-
-        st.text(value)
-
-        st.markdown(
-            '</div>',
-            unsafe_allow_html=True
-        )
-
+        st.markdown('<div class="output-box">', unsafe_allow_html=True)
+        # Markdown parsing preserves formatting and ensures sharp white visibility
+        st.markdown(value)
+        st.markdown('</div>', unsafe_allow_html=True)
     else:
-
-        st.info(
-            "No output available for this stage."
-        )
+        st.info("No output available for this stage.")
 
 
 # ============================================================
@@ -334,25 +292,19 @@ def show_output(result, key, title):
 st.html(
     """
 <div class="idea-card">
-
-    <h3>🎞️ Start Your Film</h3>
-
-    <p style="color:#aaaaaa;">
+    <h3 style="margin-top:0; color:#ffffff;">🎞️ Start Your Film</h3>
+    <p style="color:#8b949e; margin-bottom:0;">
         Enter any film idea. CinePilot will transform it into a
         complete production-ready film plan.
     </p>
-
 </div>
 """
 )
 
-# IMPORTANT:
-# EMPTY BY DEFAULT — NO OLD FILM IDEA
-
 film_idea = st.text_area(
     "Enter any film idea",
     value="",
-    height=140,
+    height=130,
     placeholder=(
         "Example: A fisherman in a coastal Tamil Nadu village "
         "discovers an abandoned lighthouse that contains a secret "
@@ -371,203 +323,92 @@ generate = st.button(
 )
 
 # ============================================================
-# GENERATE
+# GENERATE LOGIC
 # ============================================================
 
 if generate:
 
     if not film_idea.strip():
-
-        st.warning(
-            "🎬 Please enter a film idea before starting the Film Factory."
-        )
-
+        st.warning("🎬 Please enter a film idea before starting the Film Factory.")
         st.stop()
 
     if not RUNTIME_AVAILABLE:
-
-        st.error(
-            "❌ CinePilot runtime could not be loaded."
-        )
-
-        st.code(
-            RUNTIME_ERROR,
-            language="text"
-        )
-
+        st.error("❌ CinePilot runtime could not be loaded.")
+        st.code(RUNTIME_ERROR, language="text")
         st.stop()
 
-    # Clear previous session result
     if "cinepilot_result" in st.session_state:
         del st.session_state["cinepilot_result"]
 
     st.markdown("---")
 
-    st.info(
-        "🎬 CinePilot Film Factory is generating a new production..."
-    )
-
     progress_placeholder = st.empty()
-
     progress_placeholder.markdown(
         """
         ### 🤖 Autonomous Pipeline Running
-
-        🔎 Parallel Research + Director Agent  
-        ✍️ Screenplay Agent  
-        🎞️ Scene Breakdown Agent  
-        📷 Shot Design Agent  
-        🏭 Production Plan Agent  
-        🎥 Video Prompt Agent  
-        ✨ Cinematic Preview Agent
+        * 🔎 **Parallel Research** + **Director Agent**
+        * ✍️ **Screenplay Agent**
+        * 🎞️ **Scene Breakdown Agent**
+        * 📷 **Shot Design Agent**
+        * 🏭 **Production Plan Agent**
+        * 🎥 **Video Prompt Agent**
+        * ✨ **Cinematic Preview Agent**
         """
     )
 
     try:
-
-        # ====================================================
-        # REAL CINEPILOT RUNTIME
-        # ====================================================
-
-        generated_result = cinepilot_film_factory(
-            film_idea.strip()
-        )
-
-        # Save fresh result
+        generated_result = cinepilot_film_factory(film_idea.strip())
         save_result(generated_result)
-
-        # Store current result
         st.session_state["cinepilot_result"] = generated_result
 
-        st.success(
-            "🎉 Film Factory completed successfully!"
-        )
+        st.success("🎉 Film Factory completed successfully!")
 
-        # Reload saved result
         fresh_result = load_saved_result()
-
         if fresh_result is not None:
             st.session_state["cinepilot_result"] = fresh_result
 
         st.rerun()
 
     except Exception as e:
-
-        st.error(
-            f"❌ Film Factory failed: {e}"
-        )
-
+        st.error(f"❌ Film Factory failed: {e}")
         st.exception(e)
-
         st.stop()
-
-
-# ============================================================
-# RESULT SELECTION
-# ============================================================
-
-# IMPORTANT:
-# DO NOT AUTO-LOAD cinepilot_result.json ON FRESH START.
-# Only use the result generated during the current session.
-
-result = st.session_state.get("cinepilot_result")
-
-if result is None:
-    result = None
 
 
 # ============================================================
 # RESULT VIEW
 # ============================================================
 
+result = st.session_state.get("cinepilot_result")
+
 if result:
 
     st.markdown("---")
 
-    # --------------------------------------------------------
-    # Current Film Idea
-    # --------------------------------------------------------
-
-    current_idea = get_value(
-        result,
-        "film_idea"
-    )
-
+    current_idea = get_value(result, "film_idea")
     if current_idea:
-
         st.html(
             f"""
 <div class="idea-card">
-
-    <h3>🎬 Current Film Idea</h3>
-
-    <p style="color:#dddddd; font-size:1.05rem;">
+    <h3 style="margin-top:0; color:#ffca85;">🎬 Current Film Idea</h3>
+    <p style="color:#f0f6fc; font-size:1.05rem; margin-bottom:0;">
         {current_idea}
     </p>
-
 </div>
 """
         )
 
-    # --------------------------------------------------------
-    # Pipeline Status
-    # --------------------------------------------------------
-
     cols = st.columns(4)
-
     with cols[0]:
-
-        st.metric(
-            "🔎 Research",
-            "READY"
-            if get_value(
-                result,
-                "research_context"
-            )
-            else "—"
-        )
-
+        st.metric("🔎 Research", "READY" if get_value(result, "research_context") else "—")
     with cols[1]:
-
-        st.metric(
-            "🎬 Story",
-            "READY"
-            if get_value(
-                result,
-                "film_concept"
-            )
-            else "—"
-        )
-
+        st.metric("🎬 Story", "READY" if get_value(result, "film_concept") else "—")
     with cols[2]:
-
-        st.metric(
-            "🏭 Production",
-            "READY"
-            if get_value(
-                result,
-                "production_plan"
-            )
-            else "—"
-        )
-
+        st.metric("🏭 Production", "READY" if get_value(result, "production_plan") else "—")
     with cols[3]:
-
-        st.metric(
-            "✨ Preview",
-            "READY"
-            if get_value(
-                result,
-                "cinematic_preview"
-            )
-            else "—"
-        )
+        st.metric("✨ Preview", "READY" if get_value(result, "cinematic_preview") else "—")
 
     st.markdown("---")
-
-    # ========================================================
-    # OUTPUT TABS
-    # ========================================================
 
     tabs = st.tabs(
         [
@@ -583,148 +424,43 @@ if result:
         ]
     )
 
-    # --------------------------------------------------------
-    # Research
-    # --------------------------------------------------------
-
     with tabs[0]:
-
-        show_output(
-            result,
-            "research_context",
-            "🔎 Parallel Research"
-        )
-
-        st.caption(
-            "Research generated through the CinePilot research pipeline."
-        )
-
-    # --------------------------------------------------------
-    # Director
-    # --------------------------------------------------------
+        show_output(result, "research_context", "🔎 Parallel Research")
+        st.caption("Research generated through the CinePilot research pipeline.")
 
     with tabs[1]:
-
-        show_output(
-            result,
-            "film_concept",
-            "🎬 Director Vision"
-        )
-
-    # --------------------------------------------------------
-    # Screenplay
-    # --------------------------------------------------------
+        show_output(result, "film_concept", "🎬 Director Vision")
 
     with tabs[2]:
-
-        show_output(
-            result,
-            "screenplay",
-            "✍️ Screenplay"
-        )
-
-    # --------------------------------------------------------
-    # Scenes
-    # --------------------------------------------------------
+        show_output(result, "screenplay", "✍️ Screenplay")
 
     with tabs[3]:
-
-        show_output(
-            result,
-            "scene_breakdown",
-            "🎞️ Scene Breakdown"
-        )
-
-    # --------------------------------------------------------
-    # Shots
-    # --------------------------------------------------------
+        show_output(result, "scene_breakdown", "🎞️ Scene Breakdown")
 
     with tabs[4]:
-
-        show_output(
-            result,
-            "shot_breakdown",
-            "📷 Shot Breakdown"
-        )
-
-    # --------------------------------------------------------
-    # Lighting
-    # --------------------------------------------------------
+        show_output(result, "shot_breakdown", "📷 Shot Breakdown")
 
     with tabs[5]:
-
-        st.subheader(
-            "💡 Cinematic Lighting & Visual Direction"
-        )
-
-        st.info(
-            "Lighting direction is contained within the generated "
-            "shot breakdown and cinematic visual design."
-        )
-
-        shot_data = get_value(
-            result,
-            "shot_breakdown"
-        )
-
+        st.subheader("💡 Cinematic Lighting & Visual Direction")
+        st.info("Lighting direction is contained within the generated shot breakdown and cinematic visual design.")
+        shot_data = get_value(result, "shot_breakdown")
         if shot_data:
-
-            st.text(shot_data)
-
+            st.markdown(shot_data)
         else:
-
-            st.info(
-                "No lighting/visual direction available."
-            )
-
-    # --------------------------------------------------------
-    # Production
-    # --------------------------------------------------------
+            st.info("No lighting/visual direction available.")
 
     with tabs[6]:
-
-        show_output(
-            result,
-            "production_plan",
-            "🏭 Production Plan"
-        )
-
-    # --------------------------------------------------------
-    # Video Prompts
-    # --------------------------------------------------------
+        show_output(result, "production_plan", "🏭 Production Plan")
 
     with tabs[7]:
-
-        show_output(
-            result,
-            "video_prompt_package",
-            "🎥 Video Prompt Package"
-        )
-
-    # --------------------------------------------------------
-    # Cinematic Preview
-    # --------------------------------------------------------
+        show_output(result, "video_prompt_package", "🎥 Video Prompt Package")
 
     with tabs[8]:
-
-        show_output(
-            result,
-            "cinematic_preview",
-            "✨ Cinematic Preview"
-        )
-
-    # ========================================================
-    # DOWNLOAD
-    # ========================================================
+        show_output(result, "cinematic_preview", "✨ Cinematic Preview")
 
     st.markdown("---")
 
-    json_data = json.dumps(
-        result,
-        ensure_ascii=False,
-        indent=2
-    )
-
+    json_data = json.dumps(result, ensure_ascii=False, indent=2)
     st.download_button(
         label="📦 Download Complete CinePilot Result",
         data=json_data,
@@ -733,35 +469,21 @@ if result:
         use_container_width=True
     )
 
-
-# ============================================================
-# EMPTY STATE
-# ============================================================
-
 else:
-
     st.markdown("---")
-
     st.html(
         """
 <div class="idea-card" style="text-align:center;">
-
-    <h2>🎬 Your Film Factory is Ready</h2>
-
-    <p style="color:#aaaaaa;">
-        Enter a film idea above and let CinePilot build
-        the complete production pipeline.
+    <h2 style="color:#ffffff;">🎬 Your Film Factory is Ready</h2>
+    <p style="color:#8b949e;">
+        Enter a film idea above and let CinePilot build the complete production pipeline.
     </p>
-
-    <p style="color:#888888;">
-        Idea → Research → Director → Screenplay → Scenes
-        → Shots → Production → Video Prompts → Preview
+    <p style="color:#ffca85;">
+        Idea → Research → Director → Screenplay → Scenes → Shots → Production → Video Prompts → Preview
     </p>
-
 </div>
 """
     )
-
 
 # ============================================================
 # FOOTER
@@ -770,15 +492,10 @@ else:
 st.html(
     """
 <div class="footer">
-
     🎬 <b>CinePilot AI</b><br>
-
     One Idea → Production-Ready Film Plan<br><br>
-
     🤖 Autonomous Film Production Factory<br>
-
     Research • Story • Shots • Production • Cinematic Visuals
-
 </div>
 """
 )
