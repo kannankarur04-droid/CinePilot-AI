@@ -39,7 +39,7 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC CSS (FIXED TAB BUTTONS, ICONS & FONT CLARITY)
+# CINEMATIC CSS (FIXED TABS, FONT CLARITY & CONTRAST)
 # ============================================================
 
 st.markdown(
@@ -109,29 +109,35 @@ st.markdown(
     opacity: 1 !important;
 }
 
-/* High-Clarity Pipeline Tabs (Always 100% Bright White, Never Faded) */
-.stTabs [data-baseweb="tab-list"] {
+/* ============================================================ */
+/* BRUTE-FORCE TAB OVERRIDE (ZERO FADE, ALWAYS VISIBLE PILLS)   */
+/* ============================================================ */
+
+div[data-testid="stTabs"] [data-baseweb="tab-list"] {
     gap: 8px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
     padding: 8px 10px !important;
     border-radius: 12px !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
-/* Base Tab Button Styling */
-.stTabs button[role="tab"] {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+div[data-testid="stTabs"] button {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+div[data-testid="stTabs"] button[role="tab"] {
+    background-color: #1E2028 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 8px !important;
     padding: 8px 14px !important;
+    margin-right: 4px !important;
     opacity: 1 !important;
 }
 
-/* Force Tab text, icons, and nested elements to pure bright white */
-.stTabs button[role="tab"] div,
-.stTabs button[role="tab"] p,
-.stTabs button[role="tab"] span,
-.stTabs button[role="tab"] * {
+div[data-testid="stTabs"] button p,
+div[data-testid="stTabs"] button span,
+div[data-testid="stTabs"] button div {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     opacity: 1 !important;
@@ -140,29 +146,29 @@ st.markdown(
     font-size: 0.95rem !important;
 }
 
-/* Tab Hover State */
-.stTabs button[role="tab"]:hover {
-    background: rgba(255, 59, 48, 0.25) !important;
+div[data-testid="stTabs"] button[role="tab"]:hover {
+    background-color: rgba(255, 59, 48, 0.3) !important;
     border-color: #FF3B30 !important;
 }
 
-.stTabs button[role="tab"]:hover * {
+div[data-testid="stTabs"] button[role="tab"]:hover * {
     color: #FF6B6B !important;
     -webkit-text-fill-color: #FF6B6B !important;
 }
 
-/* Selected Tab (Active State) */
-.stTabs button[role="tab"][aria-selected="true"] {
-    background: rgba(255, 59, 48, 0.35) !important;
-    border: 1px solid #FF3B30 !important;
-    box-shadow: 0 0 10px rgba(255, 59, 48, 0.45) !important;
+div[data-testid="stTabs"] button[aria-selected="true"] {
+    background-color: #FF3B30 !important;
+    border-color: #FF3B30 !important;
+    box-shadow: 0 0 12px rgba(255, 59, 48, 0.5) !important;
 }
 
-.stTabs button[role="tab"][aria-selected="true"] * {
+div[data-testid="stTabs"] button[aria-selected="true"] * {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     font-weight: 800 !important;
 }
+
+/* ============================================================ */
 
 /* Fix Streamlit idea input visibility */
 [data-testid="stTextArea"] textarea {
