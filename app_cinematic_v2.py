@@ -39,7 +39,7 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC CSS (FIXED FONT CLARITY & CONTRAST)
+# CINEMATIC CSS (FIXED TABS, FONTS & VISIBILITY)
 # ============================================================
 
 st.markdown(
@@ -102,39 +102,58 @@ st.markdown(
     opacity: 1 !important;
 }
 
-/* Tabs Styling */
+/* Pipeline Status Metrics Visibility */
+[data-testid="stMetricValue"], [data-testid="stMetricLabel"] {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+/* High-Clarity Pipeline Tabs (Always Visible without clicking) */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.04);
-    padding: 6px;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08) !important;
+    padding: 8px;
     border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .stTabs [data-baseweb="tab"] {
     border-radius: 8px;
     padding: 8px 14px;
-    color: #F1F5F9 !important;
-    opacity: 1 !important;
-    font-weight: 600 !important;
+    background: rgba(255, 255, 255, 0.06);
+    transition: all 0.2s ease;
 }
 
 .stTabs [data-baseweb="tab"] p,
-.stTabs [data-baseweb="tab"] span {
-    color: #F1F5F9 !important;
+.stTabs [data-baseweb="tab"] span,
+.stTabs [data-baseweb="tab"] div {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
     opacity: 1 !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
 }
 
-.stTabs [data-baseweb="tab"]:hover p {
-    color: #FF3B30 !important;
+.stTabs [data-baseweb="tab"]:hover {
+    background: rgba(255, 59, 48, 0.2);
+}
+
+.stTabs [data-baseweb="tab"]:hover p,
+.stTabs [data-baseweb="tab"]:hover span {
+    color: #FF6B6B !important;
+    -webkit-text-fill-color: #FF6B6B !important;
 }
 
 .stTabs [aria-selected="true"] {
-    background: rgba(255, 59, 48, 0.2) !important;
-    border: 1px solid rgba(255, 59, 48, 0.45) !important;
+    background: rgba(255, 59, 48, 0.3) !important;
+    border: 1px solid #FF3B30 !important;
 }
 
-.stTabs [aria-selected="true"] p {
+.stTabs [aria-selected="true"] p,
+.stTabs [aria-selected="true"] span {
     color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
     font-weight: 700 !important;
 }
 
@@ -219,15 +238,6 @@ st.markdown(
     font-size: 1rem;
     line-height: 1.75;
     white-space: pre-wrap;
-}
-
-/* Force elements not to fade */
-[data-testid="stText"], 
-[data-testid="stText"] pre,
-[data-testid="stMarkdown"] pre {
-    color: #FFFFFF !important;
-    -webkit-text-fill-color: #FFFFFF !important;
-    opacity: 1 !important;
 }
 
 .footer {
@@ -518,10 +528,17 @@ if generate:
         st.stop()
 
 # ============================================================
-# RESULT VIEW
+# RESULT SELECTION (AUTO-LOADS SAVED JSON SO UI NEVER EMPTIES)
 # ============================================================
 
 result = st.session_state.get("cinepilot_result")
+
+if result is None:
+    result = load_saved_result()
+
+# ============================================================
+# RESULT VIEW
+# ============================================================
 
 if result:
 
