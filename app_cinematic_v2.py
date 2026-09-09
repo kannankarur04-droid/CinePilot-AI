@@ -38,21 +38,20 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC DARK CSS (WITH CAMERA LENS WATERMARK)
+# CINEMATIC DARK CSS (WITH FILM SET BACKGROUND OVERLAY)
 # ============================================================
 
 st.markdown(
     """
 <style>
-/* 1. Deep Cinema Obsidian Canvas with Subtle Camera Lens Watermark */
+/* 1. Cinematic Background with Cinema Camera Image + Dark Studio Overlay */
 .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
-    background-color: #06080b !important;
-    background-image: 
-        radial-gradient(circle at 50% 12%, rgba(20, 26, 36, 0.85) 0%, #06080b 80%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.022)' stroke-width='0.6'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'/%3E%3Ccircle cx='12' cy='13' r='4'/%3E%3C/svg%3E") !important;
+    background: 
+        linear-gradient(rgba(8, 10, 14, 0.90), rgba(4, 5, 8, 0.95)),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=80") !important;
+    background-size: cover !important;
+    background-position: center !important;
     background-repeat: no-repeat !important;
-    background-position: center 38% !important;
-    background-size: 580px 580px !important;
     background-attachment: fixed !important;
     color: #f0f6fc !important;
 }
@@ -136,15 +135,16 @@ pre, .stText, [data-testid="stText"] {
 .idea-card {
     padding: 18px 22px;
     border-radius: 14px;
-    background: rgba(18, 23, 31, 0.7);
+    background: rgba(18, 23, 31, 0.75);
     border: 1px solid #30363d;
     margin-bottom: 15px;
+    backdrop-filter: blur(8px);
 }
 
 .output-box {
     padding: 20px;
     border-radius: 14px;
-    background: #090c10;
+    background: rgba(9, 12, 16, 0.9);
     border: 1px solid #21262d;
     margin-top: 15px;
 }
@@ -203,7 +203,7 @@ pre, .stText, [data-testid="stText"] {
 
 .footer {
     text-align: center;
-    color: #6e7681;
+    color: #8b949e;
     padding-top: 30px;
     font-size: 0.92rem;
 }
@@ -313,7 +313,6 @@ st.html(
 """
 )
 
-# Box length/height extended to 220px for clear typing view
 film_idea = st.text_area(
     "Enter any film idea",
     value="",
