@@ -39,7 +39,7 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC CSS (FIXED TABS, FONTS & VISIBILITY)
+# CINEMATIC CSS (FIXED ICONS, TABS & VISIBILITY)
 # ============================================================
 
 st.markdown(
@@ -109,52 +109,53 @@ st.markdown(
     opacity: 1 !important;
 }
 
-/* High-Clarity Pipeline Tabs (Always Visible without clicking) */
+/* High-Clarity Pipeline Tabs & Icons (Zero Fade, 100% Vibrant) */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 8px;
+    gap: 10px !important;
     background: rgba(255, 255, 255, 0.08) !important;
-    padding: 8px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 10px 12px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
 .stTabs [data-baseweb="tab"] {
-    border-radius: 8px;
-    padding: 8px 14px;
-    background: rgba(255, 255, 255, 0.06);
-    transition: all 0.2s ease;
+    border-radius: 8px !important;
+    padding: 8px 14px !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    opacity: 1 !important;
 }
 
-.stTabs [data-baseweb="tab"] p,
-.stTabs [data-baseweb="tab"] span,
-.stTabs [data-baseweb="tab"] div {
+/* Ensure tab text, icons, and emojis never fade */
+.stTabs [data-baseweb="tab"] * {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     opacity: 1 !important;
-    font-weight: 600 !important;
+    filter: none !important;
+    font-weight: 700 !important;
     font-size: 0.95rem !important;
 }
 
 .stTabs [data-baseweb="tab"]:hover {
-    background: rgba(255, 59, 48, 0.2);
+    background: rgba(255, 59, 48, 0.25) !important;
+    border: 1px solid #FF3B30 !important;
 }
 
-.stTabs [data-baseweb="tab"]:hover p,
-.stTabs [data-baseweb="tab"]:hover span {
+.stTabs [data-baseweb="tab"]:hover * {
     color: #FF6B6B !important;
     -webkit-text-fill-color: #FF6B6B !important;
 }
 
 .stTabs [aria-selected="true"] {
-    background: rgba(255, 59, 48, 0.3) !important;
+    background: rgba(255, 59, 48, 0.35) !important;
     border: 1px solid #FF3B30 !important;
+    box-shadow: 0 0 12px rgba(255, 59, 48, 0.4) !important;
 }
 
-.stTabs [aria-selected="true"] p,
-.stTabs [aria-selected="true"] span {
+.stTabs [aria-selected="true"] * {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
 }
 
 /* Fix Streamlit idea input visibility */
