@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import sys
 import re
+import streamlit.components.v1 as components
 
 # ============================================================
 # CINEPILOT AI — CINEMATIC FILM FACTORY UI
@@ -39,7 +40,7 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC CSS (FIXED TABS, FONT CLARITY & CONTRAST)
+# CINEMATIC CSS (FIXED LABELS, TABS, FONT CLARITY & ZERO FADE)
 # ============================================================
 
 st.markdown(
@@ -110,20 +111,46 @@ st.markdown(
 }
 
 /* ============================================================ */
-/* BRUTE-FORCE TAB OVERRIDE (ZERO FADE, ALWAYS VISIBLE PILLS)   */
+/* "Enter any film idea" Label Fix (Zero Fade, 100% Pure White)  */
 /* ============================================================ */
+[data-testid="stWidgetLabel"] label,
+[data-testid="stWidgetLabel"] p,
+[data-testid="stWidgetLabel"] span {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    display: block !important;
+    margin-bottom: 6px !important;
+}
 
+/* Fix Streamlit Textarea Input */
+[data-testid="stTextArea"] textarea {
+    color: #111111 !important;
+    -webkit-text-fill-color: #111111 !important;
+    background-color: #FFFFFF !important;
+    caret-color: #111111 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    opacity: 1 !important;
+}
+
+[data-testid="stTextArea"] textarea::placeholder {
+    color: #555555 !important;
+    -webkit-text-fill-color: #555555 !important;
+    opacity: 1 !important;
+}
+
+/* ============================================================ */
+/* TAB OVERRIDE (PILL BUTTONS, ZERO FADE, 100% BRIGHT WHITE)    */
+/* ============================================================ */
 div[data-testid="stTabs"] [data-baseweb="tab-list"] {
     gap: 8px !important;
     background: rgba(255, 255, 255, 0.05) !important;
     padding: 8px 10px !important;
     border-radius: 12px !important;
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
-}
-
-div[data-testid="stTabs"] button {
-    opacity: 1 !important;
-    filter: none !important;
 }
 
 div[data-testid="stTabs"] button[role="tab"] {
@@ -137,7 +164,8 @@ div[data-testid="stTabs"] button[role="tab"] {
 
 div[data-testid="stTabs"] button p,
 div[data-testid="stTabs"] button span,
-div[data-testid="stTabs"] button div {
+div[data-testid="stTabs"] button div,
+div[data-testid="stTabs"] button * {
     color: #FFFFFF !important;
     -webkit-text-fill-color: #FFFFFF !important;
     opacity: 1 !important;
@@ -168,20 +196,11 @@ div[data-testid="stTabs"] button[aria-selected="true"] * {
     font-weight: 800 !important;
 }
 
-/* ============================================================ */
-
-/* Fix Streamlit idea input visibility */
-[data-testid="stTextArea"] textarea {
-    color: #111111 !important;
-    background-color: #FFFFFF !important;
-    caret-color: #111111 !important;
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
-}
-
-[data-testid="stTextArea"] textarea::placeholder {
-    color: #666666 !important;
+/* Prevent Streamlit from fading elements during re-runs */
+[data-testid="stAppViewBlockContainer"],
+div.stElementContainer {
     opacity: 1 !important;
+    filter: none !important;
 }
 
 .block-container {
@@ -206,7 +225,7 @@ div[data-testid="stTabs"] button[aria-selected="true"] * {
     font-size: 1.15rem;
 }
 
-/* Buttons */
+/* Primary Action Buttons */
 .stButton > button {
     width: 100%;
     min-height: 48px;
@@ -224,7 +243,7 @@ div[data-testid="stTabs"] button[aria-selected="true"] * {
     box-shadow: 0 6px 20px rgba(255, 59, 48, 0.4);
 }
 
-/* High-Contrast Crystal Clear Output Styling (Never Fades) */
+/* High-Contrast Crystal Clear Output Styling */
 .output-box-crystal {
     background-color: rgba(15, 16, 20, 0.92);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -238,6 +257,13 @@ div[data-testid="stTabs"] button[aria-selected="true"] * {
     word-break: break-word;
     font-size: 0.95rem;
     line-height: 1.65;
+    opacity: 1 !important;
+}
+
+.output-box-crystal *,
+.cinematic-preview-box * {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
     opacity: 1 !important;
 }
 
@@ -704,10 +730,10 @@ st.html(
 </div>
 """
 )
+
 # ============================================================
 # FORCE TAB TEXT & ICON COLOR VIA DOM INJECTION
 # ============================================================
-import streamlit.components.v1 as components
 
 components.html(
     """
@@ -726,7 +752,6 @@ components.html(
             });
         });
     }
-    // Run immediately and periodically to catch re-renders
     forceWhiteTabs();
     setInterval(forceWhiteTabs, 800);
     </script>
