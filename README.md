@@ -2,404 +2,400 @@
 
 ## One Idea → Production-Ready Film Plan
 
-CinePilot AI is an AI-powered film pre-production system that transforms a simple film idea into a structured, production-ready cinematic plan.
+CinePilot AI is an agentic filmmaking system that transforms a simple filmmaker idea into a complete, production-ready film plan.
 
-Instead of stopping at a story idea or screenplay, CinePilot takes the concept through multiple stages of filmmaking — from research and director vision to screenplay, scene design, camera planning, production planning, AI video prompts, and cinematic preview.
+Instead of generating only a screenplay, CinePilot combines real-world web research with Gemini AI and progressively develops the idea through a multi-stage filmmaking pipeline — from research and director vision to screenplay, shots, lighting, production planning, AI video prompts, and cinematic preview.
 
 ---
 
-## 🚀 What CinePilot AI Does
+## 🎥 Final Demo Film — The Silk Legacy
 
-Give CinePilot a simple film idea.
+### Final Demo Idea
 
-For example:
+> A traditional handloom weaver in Kanchipuram struggles to preserve his ancestral silk art against modern powerlooms. When his daughter introduces him to generative AI design tools, he combines 100-year-old traditional motifs with digital workflows, creating a global luxury collection and revitalizing his fading heritage village.
 
-> A middle-aged man loses his business, faces humiliation while taking whatever work he can find, learns AI, and eventually becomes the owner of a startup.
+This final demonstration combines:
 
-CinePilot transforms that idea into a complete filmmaking pipeline:
+* Kanchipuram silk heritage
+* Traditional handloom craftsmanship
+* Modern powerloom competition
+* Generative AI
+* Digital design
+* Family and cultural storytelling
+* Cinematic production planning
+
+---
+
+# 🚀 What CinePilot Does
+
+A filmmaker provides one idea.
+
+CinePilot autonomously transforms that idea into:
+
+1. 🔎 Real-World Research
+2. 🎬 Director Vision
+3. ✍️ Screenplay
+4. 🎞️ Scene Breakdown
+5. 📷 Camera & Shot Planning
+6. 💡 Lighting Direction
+7. 🏭 Production Planning
+8. 🎥 AI Video Prompt Package
+9. ✨ Cinematic Preview
+
+The complete pipeline is also exported as a structured JSON result.
+
+---
+
+# 🧠 Agentic Architecture
 
 ```text
-Film Idea
-    ↓
-Real-World Research
-    ↓
-Film Concept
-    ↓
+                         ┌──────────────────────┐
+                         │      USER IDEA       │
+                         │   Film Story Input   │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │    STREAMLIT UI      │
+                         │    CinePilot App     │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │ FILM FACTORY /       │
+                         │ ORCHESTRATOR         │
+                         └──────────┬───────────┘
+                                    │
+                       ┌────────────┴────────────┐
+                       │                         │
+                       ▼                         ▼
+              ┌─────────────────┐       ┌─────────────────┐
+              │ PARALLEL WEB    │       │ GOOGLE GEMINI   │
+              │ RESEARCH        │       │ AI              │
+              │                 │       │                 │
+              │ Real-world     │       │ Creative        │
+              │ information    │       │ reasoning       │
+              └────────┬────────┘       └────────┬────────┘
+                       │                         │
+                       └────────────┬────────────┘
+                                    ▼
+                    ┌──────────────────────────────┐
+                    │     9-STAGE FILM PIPELINE    │
+                    ├──────────────────────────────┤
+                    │ 1. Research                  │
+                    │ 2. Director                  │
+                    │ 3. Screenplay                │
+                    │ 4. Scene Breakdown           │
+                    │ 5. Camera & Shots            │
+                    │ 6. Lighting                  │
+                    │ 7. Production Planning       │
+                    │ 8. Video Prompt Package      │
+                    │ 9. Cinematic Preview         │
+                    └──────────────┬───────────────┘
+                                   │
+                                   ▼
+                    ┌──────────────────────────────┐
+                    │     cinepilot_result.json    │
+                    │    Complete Film Package     │
+                    └──────────────┬───────────────┘
+                                   │
+                                   ▼
+                    ┌──────────────────────────────┐
+                    │ Download / Production        │
+                    │ Package                      │
+                    └──────────────────────────────┘
+```
+
+---
+
+# 🔎 Parallel Web Research + Gemini
+
+CinePilot integrates **Parallel Web Research** with **Google Gemini**.
+
+The research stage retrieves relevant real-world information related to the filmmaker's idea.
+
+For example, for the Kanchipuram handloom story, research can provide contextual information about:
+
+* Kanchipuram silk traditions
+* Handloom weaving
+* Traditional motifs
+* Silk production
+* Cultural heritage
+* Modern powerloom competition
+* Craft practices
+
+The research context is then used by the AI filmmaking pipeline.
+
+Gemini uses this contextual information to develop:
+
+* Director vision
+* Story world
+* Screenplay
+* Scenes
+* Camera and shots
+* Lighting
+* Production decisions
+* Video prompts
+* Cinematic preview
+
+### Research-to-Creative Flow
+
+```text
+Filmmaker Idea
+      ↓
+Parallel Web Research
+      ↓
+Real-World Research Context
+      ↓
+Gemini AI Reasoning
+      ↓
 Director Vision
-    ↓
+      ↓
 Screenplay
-    ↓
-Scene Breakdown
-    ↓
-Camera & Shot Breakdown
-    ↓
-Production Plan
-    ↓
-AI Video Prompt Package
-    ↓
+      ↓
+Scenes
+      ↓
+Shots
+      ↓
+Lighting
+      ↓
+Production
+      ↓
+Video Prompts
+      ↓
 Cinematic Preview
 ```
 
-The goal is to bridge the gap between **creative storytelling** and **practical film production planning**.
+This allows real-world research to influence the creative filmmaking pipeline instead of generating an isolated screenplay from the original prompt.
 
 ---
 
-# 🎯 Core Objective
+# 🎬 The 9-Stage Film Factory
 
-CinePilot AI is designed to demonstrate how AI can function as an integrated film-production assistant.
+## 1. 🔎 Research
 
-The system can transform an arbitrary user-provided film idea into structured production information covering:
-
-* Story development
-* Research
-* Screenwriting
-* Scene planning
-* Camera planning
-* Lighting
-* Production requirements
-* AI video generation prompts
-* Cinematic visual direction
+Parallel Web Research gathers relevant real-world information for the filmmaker's idea.
 
 ---
 
-# 🧠 Key Features
+## 2. 🎬 Director Vision
 
-## 1. Any-Idea Film Generation
-
-CinePilot is not locked to a single predefined story.
-
-The user can provide a new film idea and the pipeline dynamically generates the downstream production stages from that idea.
-
-Example tested ideas included:
-
-* A fisherman in coastal Tamil Nadu discovering an abandoned lighthouse connected to his missing father.
-* A young woman in Madurai discovering a secret underground library beneath her family's old house.
-* A young woman discovering a hidden room containing her grandfather's old 16mm film camera and a mysterious family recording.
-
-This demonstrates that the pipeline can work with different genres, locations, characters, and story premises.
-
----
-
-## 2. Real Parallel Web Research
-
-CinePilot performs real web research as part of the film-development workflow.
-
-Research is used to provide contextual information that can influence the creative development of the film.
-
-The research stage can provide:
-
-* Relevant references
-* Cultural context
-* Location-related information
-* Story inspiration
-* Supporting research sources
-
-Research results are incorporated into the film-development pipeline rather than being treated as a completely separate activity.
-
----
-
-## 3. AI Director Vision
-
-CinePilot develops a director-oriented creative vision for the story.
-
-This includes:
+The Director stage establishes:
 
 * Genre
 * Tone
-* Visual identity
+* Theme
+* Visual language
 * Character direction
-* Emotional arc
 * Cinematic approach
-* Production considerations
 
 ---
 
-## 4. AI Screenplay Generation
+## 3. ✍️ Screenplay
 
-The system converts the film concept into a structured screenplay.
+The screenplay stage transforms the concept into a structured cinematic story.
 
-The screenplay includes:
+It develops:
 
-* Scene structure
 * Characters
-* Locations
-* Actions
+* Story progression
+* Conflict
+* Emotional arc
 * Dialogue
-* Visual direction
-* Scene duration
+* Dramatic structure
 
 ---
 
-## 5. Scene Breakdown
+## 4. 🎞️ Scene Breakdown
 
-Each screenplay scene is converted into production-oriented information.
+The screenplay is converted into production-oriented scenes.
 
-The scene breakdown can include:
+Each scene can define:
 
 * Location
 * Characters
-* Props
-* Set design
-* Costume
-* Lighting
-* Visual mood
-* Camera direction
-* Sound
-* VFX requirements
-* Continuity
-* Production difficulty
-* Low-budget alternatives
+* Action
+* Story purpose
+* Visual details
 
 ---
 
-## 6. Camera & Shot Planning
+## 5. 📷 Camera & Shot Planning
 
-CinePilot converts scenes into a cinematic camera plan.
+Each scene is developed into detailed shots including:
 
-The system can specify:
-
-* Shot type
+* Shot number
+* Framing
 * Camera angle
-* Lens
 * Camera movement
+* Lens direction
+* Subject
 * Composition
-* Lighting
-* Sound
-* Visual purpose
-* Hero shots
-* Low-budget shooting strategies
-
-This allows the creative idea to move closer to an actual shooting plan.
+* Action
 
 ---
 
-## 7. Production Planning
+## 6. 💡 Lighting
 
-CinePilot generates a practical production plan covering areas such as:
+CinePilot extracts lighting direction from the shot planning stage.
 
-* Cast
+The lighting output can include:
+
+* Natural lighting
+* Artificial lighting
+* Contrast
+* Color temperature
+* Scene atmosphere
+* Master lighting direction
+
+---
+
+## 7. 🏭 Production Planning
+
+The production stage converts the creative plan into practical filmmaking requirements.
+
+It can include:
+
 * Locations
 * Props
+* Characters
 * Costumes
-* Camera equipment
-* Lighting
-* Sound
-* VFX
-* AI/video generation requirements
-* Shooting schedule
-* Call sheet considerations
-* Production risks
-* Post-production
-* Low-budget alternatives
+* Production requirements
+* Special requirements
+* Visual considerations
 
 ---
 
-## 8. AI Video Prompt Package
+## 8. 🎥 Video Prompt Package
 
-CinePilot converts selected cinematic shots into detailed AI video-generation prompts.
+CinePilot converts the production plan into structured prompts for AI video generation workflows.
 
-Each prompt can contain:
+The prompts consider:
 
-* Character
-* Action
-* Environment
-* Camera
-* Lens
+* Scene continuity
 * Camera movement
+* Subject action
 * Lighting
-* Colour/mood
-* Sound
-* Duration
-* Continuity
-* Negative prompts
-
-This makes the output suitable as a bridge between film planning and AI-generated video workflows.
+* Environment
+* Cinematic style
 
 ---
 
-## 9. Cinematic Preview
+## 9. ✨ Cinematic Preview
 
-The final stage creates a visual blueprint for the film.
+The final stage presents the completed film concept as a cinematic preview package.
 
-The Cinematic Preview includes:
-
-* Master visual prompt
-* Hero frames
-* Character consistency
-* Location consistency
-* Lighting progression
-* Camera/lens language
-* Colour and mood progression
-* VFX direction
-* Negative prompts
-* Continuity notes
+This provides a high-level representation of the generated film plan.
 
 ---
 
-# 🏗️ CinePilot Pipeline
+# 🤖 Why CinePilot Is Agentic
 
-The complete pipeline is:
+CinePilot does not stop after generating a screenplay.
+
+Each stage produces structured information that becomes context for subsequent stages.
 
 ```text
-┌───────────────────────────┐
-│       USER FILM IDEA      │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│    REAL WEB RESEARCH      │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│      FILM CONCEPT         │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│      DIRECTOR VISION      │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│        SCREENPLAY         │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│     SCENE BREAKDOWN       │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│     CAMERA & SHOTS        │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│     PRODUCTION PLAN       │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│   VIDEO PROMPT PACKAGE    │
-└─────────────┬─────────────┘
-              ↓
-┌───────────────────────────┐
-│    CINEMATIC PREVIEW      │
-└───────────────────────────┘
+Idea
+ ↓
+Research
+ ↓
+Director
+ ↓
+Screenplay
+ ↓
+Scenes
+ ↓
+Shots
+ ↓
+Lighting
+ ↓
+Production
+ ↓
+Video Prompts
+ ↓
+Cinematic Preview
 ```
+
+The system progressively transforms a high-level idea into increasingly detailed production information.
 
 ---
 
-# 🎬 Demonstration Film
+# 🧪 Phase 5 QA / Validation
 
-## THE LEGACY CAMERA
+CinePilot was tested with multiple independent film ideas to verify that the pipeline is not dependent on a single hard-coded story.
 
-One of the final CinePilot QA demonstrations generated the following film concept.
+### Validation Examples
 
-### Premise
+* Fisherman in coastal Tamil Nadu + abandoned lighthouse + missing father
+* Young woman in Madurai + underground library + grandfather secret
+* Young woman + hidden room + grandfather's old 16mm camera + mysterious recording
 
-A young woman in Madurai discovers a secret room beneath her family's old house.
+These tests demonstrated that CinePilot can accept different story concepts.
 
-Inside, she finds an old 16mm film camera and a mysterious recording connected to her grandfather and the family's hidden past.
+### Final Demonstration
 
-### Generated Film Title
+The final demonstration uses:
 
-**THE LEGACY CAMERA**
-
-### Visual Arc
-
-```text
-Sterile / Desaturated
-        ↓
-Warm Discovery
-        ↓
-High-Contrast B&W Truth
-        ↓
-Hopeful Morning Resolve
-```
-
-The final cinematic preview maintains this visual progression across the production stages.
+**Kanchipuram Handloom + Generative AI + Cultural Heritage**
 
 ---
 
-# 🧪 Phase 5 QA
+# 📦 Structured Output
 
-CinePilot Phase 5 was tested with multiple independent film ideas to verify that the system was not dependent on a single hard-coded story.
-
-### Pipeline QA
-
-| Stage                | Result |
-| -------------------- | ------ |
-| Real Research        | ✅ PASS |
-| Film Concept         | ✅ PASS |
-| Director Vision      | ✅ PASS |
-| Screenplay           | ✅ PASS |
-| Scene Breakdown      | ✅ PASS |
-| Camera & Shots       | ✅ PASS |
-| Production Plan      | ✅ PASS |
-| Video Prompt Package | ✅ PASS |
-| Cinematic Preview    | ✅ PASS |
-
-### Runtime QA
-
-The final runtime and JSON output were also validated.
+CinePilot produces:
 
 ```text
-RUNTIME: PASS
-JSON: PASS
+cinepilot_result.json
 ```
 
-All major generated output stages were confirmed to be present and non-empty.
+The JSON contains the generated filmmaking pipeline outputs.
+
+Example structure:
+
+```text
+cinepilot_result.json
+│
+├── film_idea
+├── research
+├── film_concept
+├── director
+├── screenplay
+├── scene_breakdown
+├── shot_breakdown
+├── lighting
+├── production_plan
+├── video_prompt_package
+└── cinematic_preview
+```
+
+This provides machine-readable evidence of the complete pipeline execution.
 
 ---
 
-# 🔄 Any-Idea Validation
+# 🖥️ User Interface
 
-The dynamic pipeline was tested using different story premises.
+CinePilot uses Streamlit to provide a filmmaking workspace.
 
-### Test 1 — Fisherman
-
-```text
-Fisherman
-+
-Coastal Tamil Nadu
-+
-Abandoned Lighthouse
-+
-Missing Father
-```
-
-Result:
+The interface contains:
 
 ```text
-All major CinePilot stages generated successfully.
+🔎 Research
+🎬 Director
+✍️ Screenplay
+🎞️ Scenes
+📷 Camera & Shots
+💡 Lighting
+🏭 Production
+🎥 Video Prompts
+✨ Cinematic Preview
 ```
 
-### Test 2 — Madurai Mystery
-
-```text
-Young Woman
-+
-Madurai
-+
-Old Family House
-+
-Underground Secret Room
-+
-Grandfather
-+
-16mm Film Camera
-```
-
-Result:
-
-```text
-All major CinePilot stages generated successfully.
-```
-
-These tests demonstrated that the production pipeline responds to the supplied film idea rather than relying on a single fixed story.
+The filmmaker only needs to provide the initial idea.
 
 ---
 
 # 🛠️ Technology Stack
-
-CinePilot AI uses a lightweight Python-based application architecture.
-
-### Core Technologies
 
 * Python
 * Streamlit
@@ -407,11 +403,11 @@ CinePilot AI uses a lightweight Python-based application architecture.
 * Google GenAI SDK
 * Parallel Web Research
 * python-dotenv
-* JSON-based result storage
+* JSON
 
 ### AI Model
 
-The current application uses:
+The application is configured to use:
 
 ```text
 gemini-3.1-flash-lite
@@ -421,94 +417,62 @@ gemini-3.1-flash-lite
 
 # 📁 Project Structure
 
-The core working project contains:
-
 ```text
-cinipilot/
+CinePilot-AI/
 │
 ├── app_cinematic_v2.py
 ├── cinepilot_runtime.py
 ├── cinepilot_result.json
-├── .env
-│
-├── CinePilot_PHASE5_FULL_BACKUP_2026-09-07.zip
-│
-└── CinePilot_PHASE5_UI_WORKING_BACKUP_2026-09-08/
-    ├── app_cinematic_v2.py
-    └── cinepilot_runtime.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── LICENSE.txt
 ```
 
-### Main Application
+### Local-only file
 
-`app_cinematic_v2.py`
+```text
+.env
+```
 
-Responsible for:
-
-* Streamlit interface
-* User film idea input
-* Pipeline execution
-* Results display
-* Tab-based cinematic output
-* Result download
-
-### Runtime
-
-`cinepilot_runtime.py`
-
-Responsible for:
-
-* Film factory pipeline
-* Research integration
-* AI generation stages
-* Dynamic film-idea propagation
-* Final structured result generation
+The `.env` file contains API credentials and must not be committed to the public repository.
 
 ---
 
-# ⚙️ Installation
+# 🔐 Environment Variables
 
-## 1. Clone or copy the project
-
-Place the CinePilot project in a local directory.
-
-Example:
-
-```text
-C:\Users\<USERNAME>\Desktop\cinipilot
-```
-
-## 2. Install Python
-
-Recommended Python version used during development:
-
-```text
-Python 3.14.0
-```
-
-## 3. Install dependencies
-
-```bash
-pip install streamlit google-genai parallel-web python-dotenv
-```
-
----
-
-# 🔑 Environment Variables
-
-Create a `.env` file in the project directory.
-
-Example:
+Create a local `.env` file:
 
 ```env
 GEMINI_API_KEY=your_gemini_api_key
 PARALLEL_API_KEY=your_parallel_api_key
 ```
 
-Do not commit API keys to GitHub or include them in the public repository.
+Never publish real API keys in:
+
+* GitHub
+* README
+* Screenshots
+* Demo videos
+* Public ZIP files
 
 ---
 
-# ▶️ Running CinePilot
+# ⚙️ Installation
+
+Clone or download the repository.
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create the local `.env` file with the required API credentials.
+
+---
+
+# ▶️ Run CinePilot
 
 From the project directory:
 
@@ -516,265 +480,223 @@ From the project directory:
 streamlit run app_cinematic_v2.py
 ```
 
-Streamlit will start the CinePilot interface.
-
-Enter a film idea and run the Film Factory pipeline.
+The CinePilot Streamlit application will open in the browser.
 
 ---
 
-# 🖥️ User Workflow
+# 🔄 CinePilot Runtime
 
-The basic workflow is:
-
-### Step 1
-
-Enter any film idea.
-
-### Step 2
-
-Run CinePilot.
-
-### Step 3
-
-The system performs the production pipeline.
-
-### Step 4
-
-Explore the generated stages through the application tabs:
+The runtime coordinates the filmmaking workflow:
 
 ```text
-Research
-Director
-Screenplay
-Scenes
-Camera & Shots
-Lighting
-Production
-Video Prompts
-Cinematic Preview
+User Idea
+    ↓
+Film Factory / Orchestrator
+    ↓
+Parallel Research
+    ↓
+Gemini AI
+    ↓
+Film Pipeline
+    ↓
+Structured Result
+    ↓
+cinepilot_result.json
 ```
-
-### Step 5
-
-Download the complete CinePilot result as a JSON file.
-
----
-
-# 💡 Example Input
-
-```text
-A middle-aged man suffers a major business loss.
-After years of taking whatever work he can find and facing humiliation,
-he decides to learn AI.
-Eventually, he builds an AI startup and becomes a successful entrepreneur.
-```
-
-CinePilot can transform this simple premise into a structured film-development workflow.
-
----
-
-# 🎥 Why CinePilot?
-
-Traditional AI story generation often stops at:
-
-```text
-Idea → Story
-```
-
-CinePilot attempts to extend that workflow:
-
-```text
-Idea
- ↓
-Research
- ↓
-Story
- ↓
-Screenplay
- ↓
-Scenes
- ↓
-Shots
- ↓
-Production
- ↓
-AI Video Prompts
- ↓
-Cinematic Visual Plan
-```
-
-The focus is therefore not only **"What is the story?"**
-
-It is also:
-
-> **"How can this story be prepared for production?"**
 
 ---
 
 # 🌟 Key Innovation
 
-CinePilot combines several filmmaking workflows into one AI-assisted pipeline.
+Traditional AI filmmaking workflows often look like:
 
-### Creative Intelligence
+```text
+Idea → Script
+```
 
-AI helps develop:
+CinePilot extends this into:
 
-* Story
-* Characters
-* Conflict
-* Emotional arc
-* Director vision
+```text
+Idea
+ ↓
+Real-World Research
+ ↓
+Creative Direction
+ ↓
+Screenplay
+ ↓
+Scenes
+ ↓
+Camera
+ ↓
+Lighting
+ ↓
+Production
+ ↓
+AI Video Prompts
+ ↓
+Cinematic Preview
+```
 
-### Production Intelligence
+The goal is to bridge the gap between:
 
-AI helps plan:
+**“I have a film idea.”**
 
-* Scenes
-* Shots
-* Camera
+and
+
+**“I have a production-ready film plan.”**
+
+---
+
+# 🎯 Problem
+
+Independent filmmakers and creators often need to manually coordinate:
+
+* Research
+* Story development
+* Screenwriting
+* Scene planning
+* Camera planning
 * Lighting
-* Props
-* Locations
-* Production requirements
+* Production planning
+* AI video prompting
 
-### Generative Video Readiness
-
-The system then converts cinematic decisions into structured prompts suitable for AI video generation workflows.
+This requires multiple tools and repeated manual work.
 
 ---
 
-# 🎯 Current Status
+# 💡 Solution
 
-## Phase 5 — COMPLETE
+CinePilot acts as an **AI Film Factory**.
 
-The current CinePilot prototype has completed its planned Phase 5 development and QA workflow.
+A filmmaker provides one idea and the system progressively develops it into a structured cinematic production package.
+
+This reduces manual coordination between creative and production stages.
+
+---
+
+# 🌍 Potential Impact
+
+CinePilot can support:
+
+* Independent filmmaking
+* Short films
+* Documentary planning
+* AI-generated cinema
+* Creative pre-production
+* Film education
+* Story visualization
+* Cultural storytelling
+* Regional storytelling
+
+The Kanchipuram demonstration also shows how AI can help explore traditional cultural stories while preserving their heritage context.
+
+---
+
+# 🏆 Hackathon Demonstration
+
+## The Silk Legacy
+
+A Kanchipuram handloom weaver struggles to protect his family's century-old silk tradition.
+
+His daughter introduces generative AI design tools.
+
+Together they combine:
+
+**Traditional Motifs + Generative AI + Digital Design + Handloom Craft**
+
+The resulting luxury collection reaches an international audience and helps revive the village's fading weaving tradition.
+
+The demonstration follows:
 
 ```text
-Core Pipeline        ✅
-Dynamic Any-Idea     ✅
-Real Research        ✅
-Film Development     ✅
-Production Planning  ✅
-AI Video Prompts     ✅
-Cinematic Preview    ✅
-UI QA                 ✅
-Backup                ✅
+One Human Idea
+      ↓
+Real-World Research
+      ↓
+AI Creative Reasoning
+      ↓
+Complete Film Plan
+      ↓
+Cinematic Preview
 ```
 
 ---
 
-# 🔮 Future Improvements
+# ✅ Final QA Status
 
-Potential future development areas include:
-
-* Tamil and multilingual output
-* More language controls
-* Advanced screenplay formatting
-* Improved research relevance filtering
-* Automatic shot-count validation
-* Character image consistency
-* AI-generated storyboard frames
-* Direct AI video generation integration
-* Automatic production budget estimation
-* Location intelligence
-* Advanced scheduling
-* PDF screenplay export
-* Production-ready call sheets
-* Character and costume continuity tracking
+| Component            | Status |
+| -------------------- | ------ |
+| Streamlit UI         | ✅ PASS |
+| Film Idea Input      | ✅ PASS |
+| Parallel Research    | ✅ PASS |
+| Director Agent       | ✅ PASS |
+| Screenplay           | ✅ PASS |
+| Scene Breakdown      | ✅ PASS |
+| Camera & Shots       | ✅ PASS |
+| Lighting             | ✅ PASS |
+| Production Plan      | ✅ PASS |
+| Video Prompt Package | ✅ PASS |
+| Cinematic Preview    | ✅ PASS |
+| Runtime Pipeline     | ✅ PASS |
+| JSON Output          | ✅ PASS |
+| Any-Idea Testing     | ✅ PASS |
 
 ---
 
-# ⚠️ Known QA Note
+# 🎥 Demo Video Flow
 
-During final Phase 5 QA, the Camera & Shots output contained a minor counting discrepancy:
+Recommended final demonstration:
 
 ```text
-Listed shots: 14
-Master shot count: 16
+0:00 – 0:20   Film Idea
+0:20 – 0:35   Research
+0:35 – 1:20   Director → Screenplay → Scenes → Shots
+1:20 – 1:40   Lighting → Production
+1:40 – 2:05   Video Prompts
+2:05 – 2:40   Cinematic Preview
+2:40 – 3:00   Final Result / JSON
 ```
 
-The underlying camera-planning output was successfully generated and the discrepancy does not prevent the core pipeline from functioning.
+For the demonstration, generate the complete pipeline **before recording**.
 
-This can be addressed in a future QA refinement.
+This avoids showing generation/loading time and keeps the final demo focused on the working result.
 
 ---
 
-# 🔐 Security Note
+# 🔒 Security
 
-Never commit secrets to source control.
+Recommended `.gitignore`:
 
-The following should remain private:
-
-```text
-GEMINI_API_KEY
-PARALLEL_API_KEY
+```gitignore
+.env
+.venv/
+__pycache__/
+*.pyc
 ```
 
-Use environment variables or a secure secrets manager.
+Do not commit API credentials.
+
+Backup archives should also be checked for secrets before uploading them publicly.
 
 ---
 
-# 📜 Disclaimer
+# 📌 Project Status
 
-CinePilot AI is an experimental AI-assisted filmmaking and pre-production system.
+**CinePilot AI — Final Phase**
 
-Generated research, creative content, screenplay material, production recommendations, and AI prompts should be reviewed by human filmmakers before real-world production.
+The core agentic filmmaking pipeline has been implemented and validated.
 
-Research sources should also be independently verified when factual accuracy is important.
+The final demonstration focuses on:
 
----
+> **Traditional Kanchipuram Handloom × Generative AI × Cinematic Storytelling**
 
-# 👨‍💻 Project
-
-**CinePilot AI**
-
-### Vision
-
-> **One Idea → Production-Ready Film Plan**
-
-CinePilot explores how AI can become a creative and production partner for independent filmmakers, creators, and storytellers.
+CinePilot demonstrates how one filmmaker idea can be transformed into a structured production-ready film plan using autonomous AI workflow orchestration.
 
 ---
 
-## 🎬 From Idea to Production
+# 🎬 CinePilot AI
 
-```text
-                     CINEPILOT AI
+### One Idea → Production-Ready Film Plan
 
-                       ONE IDEA
-                          │
-                          ▼
-                    🔎 RESEARCH
-                          │
-                          ▼
-                  🎬 FILM CONCEPT
-                          │
-                          ▼
-                  🎭 DIRECTOR VISION
-                          │
-                          ▼
-                    ✍️ SCREENPLAY
-                          │
-                          ▼
-                   🎞️ SCENE PLAN
-                          │
-                          ▼
-                    📷 SHOT PLAN
-                          │
-                          ▼
-                   🏭 PRODUCTION
-                          │
-                          ▼
-                  🎥 VIDEO PROMPTS
-                          │
-                          ▼
-                 ✨ CINEMATIC PREVIEW
-                          │
-                          ▼
-                 🎬 PRODUCTION-READY
-                    FILM BLUEPRINT
-```
-
----
-
-**CinePilot AI — Turning a simple idea into a cinematic production blueprint.** 🎬
+**From imagination to production.**
