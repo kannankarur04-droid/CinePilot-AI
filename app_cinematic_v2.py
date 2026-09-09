@@ -39,7 +39,7 @@ except Exception as e:
     RUNTIME_ERROR = str(e)
 
 # ============================================================
-# CINEMATIC CSS
+# CINEMATIC CSS (FIXED FONT CLARITY & CONTRAST)
 # ============================================================
 
 st.markdown(
@@ -53,18 +53,18 @@ st.markdown(
         radial-gradient(circle at 50% -10%, rgba(255,255,255,0.07), transparent 22%),
         repeating-linear-gradient(90deg, transparent 0px, transparent 118px, rgba(255,255,255,0.018) 119px, transparent 121px),
         linear-gradient(145deg, #010102 0%, #08090c 38%, #100708 68%, #020203 100%);
-    color: #f5f5f5;
+    color: #FFFFFF !important;
 }
 
-/* Compact & Vibrant Hero Container */
+/* Compact & Vibrant Hero Section */
 .hero {
     text-align: center;
     padding: 16px 20px 14px 20px;
     margin-bottom: 18px;
     border-radius: 14px;
-    background: linear-gradient(180deg, rgba(35, 10, 15, 0.75) 0%, rgba(18, 18, 22, 0.95) 100%);
-    border: 1px solid rgba(255, 59, 48, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(180deg, rgba(35, 10, 15, 0.8) 0%, rgba(18, 18, 22, 0.95) 100%);
+    border: 1px solid rgba(255, 59, 48, 0.35);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 .hero h1 {
@@ -102,10 +102,10 @@ st.markdown(
     opacity: 1 !important;
 }
 
-/* Cinematic pipeline tabs */
+/* Tabs Styling */
 .stTabs [data-baseweb="tab-list"] {
     gap: 6px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.04);
     padding: 6px;
     border-radius: 12px;
 }
@@ -113,14 +113,14 @@ st.markdown(
 .stTabs [data-baseweb="tab"] {
     border-radius: 8px;
     padding: 8px 14px;
-    color: #f2f2f2 !important;
+    color: #F1F5F9 !important;
     opacity: 1 !important;
     font-weight: 600 !important;
 }
 
 .stTabs [data-baseweb="tab"] p,
 .stTabs [data-baseweb="tab"] span {
-    color: #f2f2f2 !important;
+    color: #F1F5F9 !important;
     opacity: 1 !important;
 }
 
@@ -129,19 +129,19 @@ st.markdown(
 }
 
 .stTabs [aria-selected="true"] {
-    background: rgba(255, 59, 48, 0.15) !important;
-    border: 1px solid rgba(255, 59, 48, 0.4) !important;
+    background: rgba(255, 59, 48, 0.2) !important;
+    border: 1px solid rgba(255, 59, 48, 0.45) !important;
 }
 
 .stTabs [aria-selected="true"] p {
-    color: #ffffff !important;
+    color: #FFFFFF !important;
     font-weight: 700 !important;
 }
 
 /* Fix Streamlit idea input visibility */
 [data-testid="stTextArea"] textarea {
     color: #111111 !important;
-    background-color: #ffffff !important;
+    background-color: #FFFFFF !important;
     caret-color: #111111 !important;
     font-size: 0.95rem !important;
     line-height: 1.5 !important;
@@ -158,19 +158,19 @@ st.markdown(
     max-width: 1400px;
 }
 
-/* Idea card */
+/* Output Cards & Containers */
 .idea-card {
     padding: 18px 22px;
     border-radius: 14px;
-    background: rgba(255,255,255,0.045);
-    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     margin-bottom: 16px;
 }
 
 .idea-card h3 {
     margin-top: 0;
     margin-bottom: 6px;
-    color: #ffffff;
+    color: #FFFFFF !important;
     font-size: 1.15rem;
 }
 
@@ -183,7 +183,7 @@ st.markdown(
     font-weight: 700;
     border: 1px solid rgba(255, 59, 48, 0.4);
     background: linear-gradient(135deg, #FF3B30 0%, #C02018 100%);
-    color: #ffffff !important;
+    color: #FFFFFF !important;
     transition: 0.2s ease;
 }
 
@@ -192,30 +192,42 @@ st.markdown(
     box-shadow: 0 6px 20px rgba(255, 59, 48, 0.4);
 }
 
-/* Output Box */
-.output-box {
+/* High-Contrast Crystal Clear Output Styling (Never Fades) */
+.output-box-crystal {
+    background-color: rgba(15, 16, 20, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-left: 3px solid #FF3B30;
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 12px;
-    background: rgba(18, 18, 22, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.12);
     margin-top: 12px;
-    font-family: monospace;
+    color: #FFFFFF !important;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
     white-space: pre-wrap;
     word-break: break-word;
-    color: #e5e5e5;
-    font-size: 0.92rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    opacity: 1 !important;
 }
 
 .cinematic-preview-box {
     padding: 24px;
     border-radius: 14px;
-    background: linear-gradient(145deg, rgba(30, 20, 25, 0.6), rgba(12, 12, 16, 0.85));
-    border: 1px solid rgba(255, 59, 48, 0.25);
+    background: linear-gradient(145deg, rgba(35, 15, 20, 0.75), rgba(14, 14, 18, 0.95));
+    border: 1px solid rgba(255, 59, 48, 0.35);
     margin-top: 12px;
-    color: #f1f5f9;
-    font-size: 0.98rem;
-    line-height: 1.7;
+    color: #FFFFFF !important;
+    font-size: 1rem;
+    line-height: 1.75;
+    white-space: pre-wrap;
+}
+
+/* Force elements not to fade */
+[data-testid="stText"], 
+[data-testid="stText"] pre,
+[data-testid="stMarkdown"] pre {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    opacity: 1 !important;
 }
 
 .footer {
@@ -231,7 +243,7 @@ st.markdown(
 )
 
 # ============================================================
-# COMPACT HERO SECTION
+# COMPACT HERO
 # ============================================================
 
 st.html(
@@ -297,22 +309,21 @@ def get_value(result, key):
 
 
 def show_output(result, key, title):
-    """Display generated stage output."""
-
+    """Display generated stage output with crystal clear pure white text."""
     st.subheader(title)
     value = get_value(result, key)
 
     if value.strip():
-        st.markdown('<div class="output-box">', unsafe_allow_html=True)
-        st.text(value)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown(
+            f'<div class="output-box-crystal">{value}</div>',
+            unsafe_allow_html=True
+        )
     else:
         st.info("No output available for this stage.")
 
 
 def extract_lighting_direction(shot_data):
-    """Extract and synthesize a comprehensive lighting blueprint from CinePilot shot breakdown."""
-
+    """Extract and build a comprehensive lighting blueprint from CinePilot shot breakdown."""
     if not shot_data:
         return ""
 
@@ -353,7 +364,6 @@ def extract_lighting_direction(shot_data):
 
         clean = line.replace("**", "").strip()
 
-        # Scene detection
         scene_match = scene_pattern.search(clean)
         if scene_match:
             current_scene = scene_match.group(1)
@@ -362,7 +372,6 @@ def extract_lighting_direction(shot_data):
             i += 1
             continue
 
-        # Shot lighting detection
         shot_match = shot_pattern.search(clean)
         if shot_match and current_scene:
             shot_number = shot_match.group(1)
@@ -391,18 +400,16 @@ def extract_lighting_direction(shot_data):
             i += 1
             continue
 
-        # Master lighting detection
         master_match = master_pattern.search(clean)
         if master_match and master_lighting_raw is None:
             master_lighting_raw = master_match.group(1).strip()
 
         i += 1
 
-    # Format Master Lighting Plan into a rich, professional layout
     master_block = [
-        "\n==================================================",
+        "\n" + "="*60,
         "💡 MASTER CINEMATOGRAPHY & LIGHTING BLUEPRINT",
-        "=================================================="
+        "="*60
     ]
 
     if master_lighting_raw:
@@ -418,8 +425,8 @@ def extract_lighting_direction(shot_data):
     master_block.append("  - Act III (Scenes 5-6): 2800K Golden Hour & Warm Accent Fill — Triumphant, rich heirloom luminosity.")
 
     master_block.append("\n• Low-Budget Execution Strategy:")
-    master_block.append("  - Rely on natural aperture window light as key; control bounce with simple foam core boards.")
-    master_block.append("  - Harness direct laptop/tablet displays for authentic night scene facial spill without heavy rigging.")
+    master_block.append("  - Rely on natural window light as primary key; control bounces with basic foam core reflectors.")
+    master_block.append("  - Utilize device screen glow for night scenes to bypass expensive light rigs.")
 
     return "\n".join(output) + "\n" + "\n".join(master_block)
 
@@ -431,7 +438,7 @@ st.html(
     """
 <div class="idea-card">
     <h3>🎞️ Start Your Film</h3>
-    <p style="color:#cccccc; font-size:0.92rem; margin:0;">
+    <p style="color:#DDDDDD; font-size:0.92rem; margin:0;">
         Enter any film idea. CinePilot will transform it into a complete production-ready film plan.
     </p>
 </div>
@@ -526,7 +533,7 @@ if result:
             f"""
 <div class="idea-card">
     <h3>🎬 Current Film Concept</h3>
-    <p style="color:#f1f5f9; font-size:0.98rem; line-height:1.5; margin:0;">
+    <p style="color:#FFFFFF; font-size:0.98rem; line-height:1.5; margin:0;">
         {current_idea}
     </p>
 </div>
@@ -578,9 +585,7 @@ if result:
         st.subheader("🎞️ Scene Breakdown")
         scene_data = get_value(result, "scene_breakdown")
         if scene_data.strip():
-            st.markdown('<div class="output-box">', unsafe_allow_html=True)
-            st.text(scene_data)
-            st.markdown('</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="output-box-crystal">{scene_data}</div>', unsafe_allow_html=True)
         else:
             st.info("No scene breakdown available.")
 
@@ -588,9 +593,7 @@ if result:
         st.subheader("📷 Camera & Shots")
         shot_data = get_value(result, "shot_breakdown")
         if shot_data.strip():
-            st.markdown('<div class="output-box">', unsafe_allow_html=True)
-            st.text(shot_data)
-            st.markdown('</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="output-box-crystal">{shot_data}</div>', unsafe_allow_html=True)
         else:
             st.info("No shot breakdown available.")
 
@@ -600,9 +603,7 @@ if result:
         if shot_data.strip():
             lighting_data = extract_lighting_direction(shot_data)
             if lighting_data:
-                st.markdown('<div class="output-box">', unsafe_allow_html=True)
-                st.text(lighting_data)
-                st.markdown('</div>', unsafe_allow_html=True)
+                st.markdown(f'<div class="output-box-crystal">{lighting_data}</div>', unsafe_allow_html=True)
             else:
                 st.info("No dedicated lighting direction found.")
         else:
@@ -648,11 +649,11 @@ else:
     st.html(
         """
 <div class="idea-card" style="text-align:center;">
-    <h3 style="color:#ffffff;">🎬 Your Film Factory is Ready</h3>
-    <p style="color:#aaaaaa; font-size:0.92rem;">
+    <h3 style="color:#FFFFFF;">🎬 Your Film Factory is Ready</h3>
+    <p style="color:#CCCCCC; font-size:0.92rem;">
         Enter a film idea above and let CinePilot build the complete autonomous production pipeline.
     </p>
-    <p style="color:#888888; font-size:0.85rem; margin-top:8px;">
+    <p style="color:#999999; font-size:0.85rem; margin-top:8px;">
         Idea → Research → Director → Screenplay → Scenes → Shots → Lighting → Production → Video Prompts → Preview
     </p>
 </div>
