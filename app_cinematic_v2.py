@@ -44,16 +44,17 @@ except Exception as e:
 st.markdown(
     """
 <style>
-/* 1. Cinematic Background with Cinema Camera Image + Dark Studio Overlay */
+/* 1. Clean Cinema Background with Built-in Camera Silhouette */
 .stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
-    background: 
-        linear-gradient(rgba(8, 10, 14, 0.90), rgba(4, 5, 8, 0.95)),
-        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=80") !important;
-    background-size: cover !important;
-    background-position: center !important;
+    background-color: #07090e !important;
+    background-image: 
+        radial-gradient(circle at 50% 8%, rgba(220, 38, 38, 0.18) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1.5'%3E%3Cpath d='M4 20h40v30H4zM44 28l16-8v24l-16-8z'/%3E%3Ccircle cx='18' cy='35' r='7'/%3E%3Ccircle cx='14' cy='14' r='6'/%3E%3Ccircle cx='28' cy='14' r='6'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat !important;
+    background-position: center 30% !important;
+    background-size: 380px 380px !important;
     background-attachment: fixed !important;
-    color: #f0f6fc !important;
+    color: #ffffff !important;
 }
 
 /* 2. Absolute Crisp Visibility for Standard Text, Markdown, and Output Boxes */
